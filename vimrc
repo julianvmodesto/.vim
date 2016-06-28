@@ -5,7 +5,9 @@
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
-set nocompatible              " be iMproved, required
+if &compatible
+  set nocompatible              " be iMproved, required
+endif
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -71,6 +73,30 @@ set number
 
 " Allow hidden buffers, don't limit to 1 file per window/split
 set hidden
+
+" Display settings
+set nowrap
+set scrolloff=2
+set showmatch
+set showmode
+set showcmd
+set ruler
+set title
+set wildmenu
+set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~,*.pyc,.svn
+set laststatus=2
+set matchtime=2
+
+" Editor settings
+set ignorecase
+set smartcase
+set magic
+set bs=indent,eol,start
+
+" System settings
+set confirm
+set hidden
+set history=50
 
 " vim syntastic plugin recommended settings
 set statusline+=%#warningmsg#
