@@ -1,5 +1,11 @@
+" A minimal vimrc for new vim users to start with.
+"
+" Referenced here:
+" http://vimuniversity.com/samples/your-first-vimrc-should-be-nearly-empty
+
+" Use Vim settings, rather than Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
 set nocompatible              " be iMproved, required
-filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -16,6 +22,7 @@ Plugin 'ervandew/supertab'
 Plugin 'godlygeek/tabular'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -46,6 +53,18 @@ execute "set colorcolumn=" . join(range(81,335), ',')
 highlight ColorColumn ctermbg=238
 highlight ColorColumn guibg=Black
 
+" Make backspace behave in a sane manner.
+set backspace=indent,eol,start
+
+" Switch syntax highlighting on
+syntax on
+
+" Show line numbers
+set number
+
+" Allow hidden buffers, don't limit to 1 file per window/split
+set hidden
+
 " vim syntastic plugin recommended settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -55,3 +74,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = "⚠"
