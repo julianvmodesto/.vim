@@ -17,13 +17,19 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
+" Show trailing whitespace
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'ervandew/supertab'
 Plugin 'godlygeek/tabular'
+" tcomment for block comments
 Plugin 'tomtom/tcomment_vim'
 Plugin 'scrooloose/syntastic'
+" Ctrl+P
 Plugin 'kien/ctrlp.vim'
+" Show git +/- in gutter
 Plugin 'airblade/vim-gitgutter'
+" Show vim marks in gutter
+Plugin 'kshenoy/vim-signature'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
