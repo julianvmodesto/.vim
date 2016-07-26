@@ -24,10 +24,13 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " Show trailing whitespace
 Plugin 'bronson/vim-trailing-whitespace'
+" use tab for auto completion
 Plugin 'ervandew/supertab'
+" smart auto indenting`
 Plugin 'godlygeek/tabular'
 " t comment for block comments
 Plugin 'tomtom/tcomment_vim'
+" syntax highlighting
 Plugin 'scrooloose/syntastic'
 " Ctrl+P
 Plugin 'kien/ctrlp.vim'
