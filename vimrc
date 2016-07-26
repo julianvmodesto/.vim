@@ -9,6 +9,9 @@ if &compatible
   set nocompatible              " be iMproved, required
 endif
 
+" plugins expect bash - not fish, zsh, etc
+set shell=bash
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -32,6 +35,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 " Show vim marks in gutter
 Plugin 'kshenoy/vim-signature'
+Plugin 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -110,3 +114,25 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
+
+" use goimports for formatting
+let g:go_fmt_command = "goimports"
+
+" turn highlighting on
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
+let g:go_list_type = "quickfix"
+
+"we also want to get rid of accidental trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+" use macOS clipboard
+set clipboard=unnamed
+
+" show pattern match while typing
+set incsearch
