@@ -26,7 +26,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'ervandew/supertab'
 Plugin 'godlygeek/tabular'
-" tcomment for block comments
+" t comment for block comments
 Plugin 'tomtom/tcomment_vim'
 Plugin 'scrooloose/syntastic'
 " Ctrl+P
@@ -136,3 +136,5 @@ set clipboard=unnamed
 
 " show pattern match while typing
 set incsearch
+" highlight search
+set hlsearch
