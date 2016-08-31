@@ -101,3 +101,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " use macOS clipboard
 set clipboard=unnamed
+
+autocmd! BufWritePost * Neomake
+let g:neomake_open_list = 2
+
