@@ -28,6 +28,7 @@ Plugin 'airblade/vim-gitgutter'
 " Show vim marks in gutter
 Plugin 'kshenoy/vim-signature'
 Plugin 'fatih/vim-go'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -106,4 +107,10 @@ autocmd! BufWritePost * Neomake
 let g:neomake_open_list = 2
 
 autocmd FileType gitcommit setlocal spell
+
+" splits switching
+nnoremap <C-J> <C-W><C-J> "Ctrl-j to move down a split
+nnoremap <C-K> <C-W><C-K> "Ctrl-k to move up a split
+nnoremap <C-L> <C-W><C-L> "Ctrl-l to move    right a split
+nnoremap <C-H> <C-W><C-H> "Ctrl-h to move left a split
 
