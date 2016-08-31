@@ -105,3 +105,5 @@ set clipboard=unnamed
 autocmd! BufWritePost * Neomake
 let g:neomake_open_list = 2
 
+autocmd FileType gitcommit setlocal spell
+
