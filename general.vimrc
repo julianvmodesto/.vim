@@ -16,11 +16,33 @@ if !has('nvim')
   " Allow backspacing over everything in insert mode
   set backspace=indent,eol,start
 
+  set complete-=i
+
+  set display+=lastline
+
   set encoding=utf-8 " Set default encoding to UTF-8
+
+  set hlsearch    " Highlight found searches
+  set incsearch   " Shows the match while typing
+
+  set nrformats-=octal
 
   set smarttab
 
   set ttyfast
+
+  " In many terminal emulators the mouse works just fine, thus enable it.
+  if has('mouse')
+    set mouse=a
+  endif
+
+  if &tabpagemax < 50
+    set tabpagemax=50
+  endif
+
+  if !empty(&viminfo)
+    set viminfo^=!
+  endif
 
 endif
 
@@ -63,11 +85,9 @@ set showmatch
 set matchtime=2
 set noshowmatch " Do not show matching brackets by flickering
 set noshowmode  " We show the mode with airlien or lightline
-set incsearch   " Shows the match while typing
-set hlsearch    " Highlight found searches
 set ignorecase  " Search case insensitive...
 set smartcase   " ... but not when search pattern contains upper case characters
-set magic
+set magic       " For regex
 
 " speed up syntax highlighting
 set nocursorcolumn
@@ -101,25 +121,12 @@ if &history < 1000
   set history=50
 endif
 
-if &tabpagemax < 50
-  set tabpagemax=50
-endif
-
-if !empty(&viminfo)
-  set viminfo^=!
-endif
 
 if !&scrolloff
   set scrolloff=1
 endif
 if !&sidescrolloff
   set sidescrolloff=5
-endif
-set display+=lastline
-
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
 endif
 
 if has("autocmd")
