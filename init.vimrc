@@ -10,6 +10,7 @@ Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'tomtom/tcomment_vim'
+Plug 'junegunn/vim-easy-align'
 
 Plug 'kien/ctrlp.vim'
 
@@ -29,3 +30,7 @@ call plug#end()
 " :PlugUpdate	update plugins
 " :PlugClean	remove unused plugins
 " :PlugUpgrade	upgrade vim-plug
+"
+" :w            write file
+" :source %     source file
+
