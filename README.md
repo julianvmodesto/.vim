@@ -22,6 +22,12 @@ ln -sf ~/.vim/vimrc ~/.config/nvim/init.vim
 vim -c "PlugInstall" -c "qa" # Install plugins with vim-plug
 ```
 
+Configure tmux.
+https://github.com/christoomey/vim-tmux-navigator#tmux
+
+Fix neovim + <C-h>
+https://github.com/neovim/neovim/issues/2048#issuecomment-78045837
+
 ## Uninstall
 
 ```
