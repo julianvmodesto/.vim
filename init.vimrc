@@ -12,6 +12,9 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'tomtom/tcomment_vim'
 Plug 'junegunn/vim-easy-align'
 
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 Plug 'kien/ctrlp.vim'
 
 Plug 'kshenoy/vim-signature'
