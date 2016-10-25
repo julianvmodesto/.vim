@@ -22,8 +22,10 @@ if !has('nvim')
 
   set encoding=utf-8 " Set default encoding to UTF-8
 
-  set hlsearch    " Highlight found searches
-  set incsearch   " Shows the match while typing
+  set hlsearch  " Highlight found searches
+  set incsearch " Shows the match while typing
+
+  set laststatus=2 " always show status line
 
   set nrformats-=octal
 
@@ -84,10 +86,12 @@ set lazyredraw " Wait to redraw
 set showmatch
 set matchtime=2
 set noshowmatch " Do not show matching brackets by flickering
-set noshowmode  " We show the mode with airlien or lightline
 set ignorecase  " Search case insensitive...
 set smartcase   " ... but not when search pattern contains upper case characters
 set magic       " For regex
+
+set showtabline=2 " always show tabline
+set noshowmode    " We show the mode with airline or lightline
 
 " speed up syntax highlighting
 set nocursorcolumn
