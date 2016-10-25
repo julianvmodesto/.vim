@@ -11,21 +11,20 @@ if !has('nvim')
 
   set autoindent
 
-  set autoread " Automatically reread changed files without asking me anything
+  set autoread                   " Automatically reread changed files without asking me anything
 
-  " Allow backspacing over everything in insert mode
-  set backspace=indent,eol,start
+  set backspace=indent,eol,start " Allow backspacing over everything in insert mode
 
   set complete-=i
 
   set display+=lastline
 
-  set encoding=utf-8 " Set default encoding to UTF-8
+  set encoding=utf-8             " Set default encoding to UTF-8
 
-  set hlsearch  " Highlight found searches
-  set incsearch " Shows the match while typing
+  set hlsearch                   " Highlight found searches
+  set incsearch                  " Shows the match while typing
 
-  set laststatus=2 " always show status line
+  set laststatus=2               " always show status line
 
   set nrformats-=octal
 
@@ -62,36 +61,31 @@ set tabstop=4
 
 " Hint - use EasyAlign command vipga"
 
-set number   " Show line numbers
-set showcmd  " Show me what I'm typing
-set showmode " Show current mode
+set number        " show line numbers
 set nowrap
 set scrolloff=2
-set ruler    " Show the cursor position all the time
+set ruler         " show the cursor position all the time
 set cursorline
 set title
+set showmode      " show mode if we don't have airline
+set showcmd       " show me what i'm typing
+set showtabline=2 " always show tabline
 
-set noswapfile " Don't use swapfile
-set nobackup   " Don't create annoying backup files
+set noswapfile    " don't use swapfile
+set nobackup      " don't create annoying backup files
 set nowritebackup
 
-" Allow hidden buffers, don't limit to 1 file per window/split
-set hidden
+set hidden        " allow hidden buffers, don't limit to 1 file per window/split
 set confirm
-
-set autowrite      " Automatically save before :next, :make etc.
-
-set lazyredraw " Wait to redraw
+set autowrite     " automatically save before :next, :make etc.
+set lazyredraw    " wait to redraw
 
 set showmatch
 set matchtime=2
-set noshowmatch " Do not show matching brackets by flickering
-set ignorecase  " Search case insensitive...
-set smartcase   " ... but not when search pattern contains upper case characters
-set magic       " For regex
-
-set showtabline=2 " always show tabline
-set noshowmode    " We show the mode with airline or lightline
+set noshowmatch   " do not show matching brackets by flickering
+set ignorecase    " search case insensitive...
+set smartcase     " ... but not when search pattern contains upper case characters
+set magic         " for regex
 
 " speed up syntax highlighting
 set nocursorcolumn
@@ -101,22 +95,22 @@ syntax sync minlines=256
 set synmaxcol=300
 set re=1
 
-" Time out on key codes but not mappings.
-" Basically this makes terminal Vim work sanely.
+" time out on key codes but not mappings.
+" basically this makes terminal vim work sanely.
 set notimeout
 set ttimeout
 set ttimeoutlen=10
 
-" Better Completion
+" better completion
 set complete=.,w,b,u,t
 set completeopt=longest,menuone
 
 " show color column for 80-char limit
 execute "set colorcolumn=" . join(range(81,335), ',')
-highlight ColorColumn ctermbg=238
-highlight ColorColumn guibg=Black
+highlight colorcolumn ctermbg=238
+highlight colorcolumn guibg=black
 
-" Use macOS clipboard
+" use macos clipboard
 set clipboard=unnamed
 
 set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~,*.pyc,.svn
@@ -144,7 +138,8 @@ if has("autocmd")
     " Trim whitespace onsave
     autocmd BufWritePre * %s/\s\+$//e
 
-	autocmd FocusLost * :wa " Set vim to save the file on focus out.
+    " Set vim to save the file on focus out.
+	autocmd FocusLost * :wa
 
     " open help vertically
     command! -nargs=* -complete=help Help vertical belowright help <args>
