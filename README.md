@@ -22,3 +22,9 @@ ln -sf ~/.vim/vimrc ~/.config/nvim/init.vim
 vim -c "PlugInstall" -c "qa" # Install plugins with vim-plug
 ```
 
+## Uninstall
+
+```
+rm -rf ~/.config/nvim ~/.vim ~/.vimrc
+```
+
