@@ -114,6 +114,7 @@ highlight colorcolumn guibg=black
 set clipboard=unnamed " Yank to the system clipboard by default
 
 set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~,*.pyc,.svn
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*node_modules*,*.jpg,*.png,*.svg,*.ttf,*.woff,*.woff3,*.eot
 
 if &history < 1000
   set history=50
