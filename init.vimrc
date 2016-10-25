@@ -25,6 +25,9 @@ Plug 'christoomey/vim-tmux-navigator'
 " Go
 Plug 'fatih/vim-go'
 
+" JavaScript
+Plug 'jaawerth/nrun.vim'
+
 " Add plugins to &runtimepath
 call plug#end()
 

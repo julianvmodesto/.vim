@@ -1,4 +1,9 @@
 
+let g:neomake_javascript_enabled_makers = ['eslint']
+
+" When switching/opening a JS buffer, set neomake's eslint path, and enable it as a maker
+autocmd BufEnter *.js let g:neomake_javascript_eslint_exe = nrun#Which('eslint')
+
 " Run Neomake on current file on write
 autocmd! BufWritePost * Neomake
 
