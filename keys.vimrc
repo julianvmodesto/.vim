@@ -11,3 +11,10 @@ noremap <silent> <C-h> <c-w>h
 noremap <silent> <C-k> <c-w>k
 noremap <silent> <C-j> <c-w>j
 
+" Act like D and C
+nnoremap Y y$
+
+" sometimes this happens and I hate it
+map :Vs :vs
+map :Sp :sp
+
