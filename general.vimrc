@@ -75,10 +75,11 @@ set noswapfile    " don't use swapfile
 set nobackup      " don't create annoying backup files
 set nowritebackup
 
-set hidden        " allow hidden buffers, don't limit to 1 file per window/split
-set confirm
-set autowrite     " automatically save before :next, :make etc.
-set lazyredraw    " wait to redraw
+set hidden     " allow hidden buffers, don't limit to 1 file per window/split
+set confirm    " Ask to save buffer instead of failing when executing
+               " commands which close buffers
+set autowrite  " automatically save before :next, :make etc.
+set lazyredraw " wait to redraw
 
 set showmatch
 set matchtime=2
@@ -110,8 +111,7 @@ execute "set colorcolumn=" . join(range(81,335), ',')
 highlight colorcolumn ctermbg=238
 highlight colorcolumn guibg=black
 
-" use macos clipboard
-set clipboard=unnamed
+set clipboard=unnamed " Yank to the system clipboard by default
 
 set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~,*.pyc,.svn
 
