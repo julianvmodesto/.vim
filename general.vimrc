@@ -161,5 +161,10 @@ if has("autocmd")
 
   augroup END
 
+  " use tabs
+  augroup golang
+    au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+  augroup END
+
 endif " has("autocmd")
 
