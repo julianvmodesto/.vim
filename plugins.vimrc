@@ -29,3 +29,7 @@ let g:go_highlight_build_constraints = 1
 
 let g:go_list_type = "quickfix"
 
+" Go
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+
