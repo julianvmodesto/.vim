@@ -18,7 +18,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'kien/ctrlp.vim'
 
 Plug 'kshenoy/vim-signature'
+
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 Plug 'christoomey/vim-tmux-navigator'
 
