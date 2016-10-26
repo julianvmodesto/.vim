@@ -11,6 +11,7 @@ Plug 'godlygeek/tabular'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'tomtom/tcomment_vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'AndrewRadev/splitjoin.vim'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
