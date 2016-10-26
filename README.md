@@ -15,13 +15,17 @@ Install Anaconda.
 ```
 conda update conda
 conda update anaconda
-conda create -n neovim2 python=2
-conda create -n neovim3 python=3
+conda create -n neovim2 python=2.7
 conda install -n neovim2 flake8
+source activate neovim2
+pip install neovim
+conda create -n neovim3 python=3.4
 conda install -n neovim3 flake8
+source activate neovim3
+pip install neovim
 ```
 
-Find in general.vimrc
+Find and check `g:python_host_prog` and `g:python3_host_prog` in general.vimrc
 
 ```
 let py2="path/to/python"
