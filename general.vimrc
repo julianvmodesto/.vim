@@ -48,6 +48,14 @@ if !has('nvim')
 endif
 
 if has('nvim')
+  let py2="path/to/python"
+  if filereadable(py2)
+    let g:python_host_prog = py2
+  endif
+  let py3="path/to/python"
+  if filereadable(py3)
+    let g:python3_host_prog = py3
+  endif
 endif
 
 " No beeps
