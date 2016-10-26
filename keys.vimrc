@@ -18,3 +18,8 @@ nnoremap Y y$
 map :Vs :vs
 map :Sp :sp
 
+" Quickly jump between errors in quickfix
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+
