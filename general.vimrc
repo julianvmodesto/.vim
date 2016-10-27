@@ -168,7 +168,3 @@ if has("autocmd")
 
 endif " has("autocmd")
 
-let g:python_host_prog=$HOME."/anaconda/envs/neovim2/bin/python"
-let g:python3_host_prog=$HOME."anaconda/envs/neovim3/bin/python"
-let g:UltiSnipsUsePythonVersion=3
-
