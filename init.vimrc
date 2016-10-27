@@ -30,9 +30,6 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'christoomey/vim-tmux-navigator'
 
-" https://www.reddit.com/r/neovim/comments/46uvdp/restart_neovim_inside_neovim
-Plug 'chemzqm/unite-session'
-
 " Go
 Plug 'fatih/vim-go'
 
