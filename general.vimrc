@@ -129,6 +129,11 @@ if !&sidescrolloff
 endif
 
 if has("autocmd")
+  augroup vimHelp
+    " open help vertically
+    autocmd FileType help wincmd L
+    autocmd FileType h wincmd L
+  augroup end
 
   augroup vimrcEx
     au!
@@ -141,9 +146,6 @@ if has("autocmd")
 
     " Set vim to save the file on focus out.
 	autocmd FocusLost * :wa
-
-    " open help vertically
-    autocmd FileType help wincmd L
 
     " Add spellcheck to gitcommit
 	autocmd FileType gitcommit setlocal spell
