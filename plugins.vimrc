@@ -29,3 +29,6 @@ let g:go_highlight_build_constraints = 1
 
 let g:go_list_type = "quickfix"
 
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+
