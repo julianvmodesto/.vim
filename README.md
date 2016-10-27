@@ -25,17 +25,11 @@ source activate neovim3
 pip install neovim
 ```
 
-Find and check `g:python_host_prog` and `g:python3_host_prog` in general.vimrc
+Find and check `g:python_host_prog` and `g:python3_host_prog` in vimrc/init.vim
 
 ```
-let py2="path/to/python"
-if filereadable(py2)
-  let g:python_host_prog = py2
-endif
-let py3="path/to/python"
-if filereadable(py3)
-  let g:python3_host_prog = py3
-endif
+let g:python_host_prog = 'path/to/python'
+let g:python3_host_prog = 'path/to/python'
 ```
 
 ## Install
