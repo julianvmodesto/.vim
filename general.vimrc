@@ -143,7 +143,6 @@ if has("autocmd")
 	autocmd FocusLost * :wa
 
     " open help vertically
-    command! -nargs=* -complete=help Help vertical belowright help <args>
     autocmd FileType help wincmd L
 
     " Add spellcheck to gitcommit
