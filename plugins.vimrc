@@ -21,10 +21,13 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 let g:go_fmt_command = "goimports"
 
 " turn highlighting on
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
 
 let g:go_list_type = "quickfix"
