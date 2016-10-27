@@ -32,3 +32,5 @@ let g:go_list_type = "quickfix"
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 
+au Filetype vim let b:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'", '`':'`'}
+
