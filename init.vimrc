@@ -35,6 +35,8 @@ Plug 'fatih/vim-go'
 
 " JavaScript
 Plug 'jaawerth/nrun.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 " Add plugins to &runtimepath
 call plug#end()

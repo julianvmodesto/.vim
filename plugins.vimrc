@@ -8,6 +8,8 @@ autocmd BufEnter *.js let g:neomake_javascript_eslint_exe = nrun#Which('eslint')
 " Run Neomake on current file on write
 autocmd! BufWritePost * Neomake
 
+let g:jsx_ext_required = 0
+
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
