@@ -39,8 +39,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
 " Markdown
-Plug 'iamcco/mathjax-support-for-mkdp'
-Plug 'iamcco/markdown-preview.vim'
+Plug 'neovim/node-host', { 'do': 'npm install' }
+Plug 'vimlab/mdown.vim', { 'do': 'npm install' }
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -53,4 +53,5 @@ call plug#end()
 "
 " :w            write file
 " :source %     source file
+" :UpdateRemotePlugins
 
