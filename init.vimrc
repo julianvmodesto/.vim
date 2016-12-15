@@ -38,6 +38,10 @@ Plug 'jaawerth/nrun.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
+" Markdown
+Plug 'iamcco/mathjax-support-for-mkdp'
+Plug 'iamcco/markdown-preview.vim'
+
 " Add plugins to &runtimepath
 call plug#end()
 
