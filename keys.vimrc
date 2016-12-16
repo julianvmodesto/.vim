@@ -17,6 +17,8 @@ nnoremap Y y$
 " sometimes this happens and I hate it
 map :Vs :vs
 map :Sp :sp
+map :Q :q
+map :Wq :wq
 
 " Quickly jump between errors in quickfix
 map <C-n> :cnext<CR>
