@@ -53,6 +53,7 @@ ln -sf ~/.vim/vimrc ~/.config/nvim/init.vim
 ## Post-Install
 
 ```
+vim -c "CheckHealth"
 vim -c "PlugInstall" -c "qa" # Install plugins with vim-plug
 ```
 
