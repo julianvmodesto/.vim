@@ -55,6 +55,11 @@ https://github.com/christoomey/vim-tmux-navigator#tmux
 Fix neovim + <C-h>
 https://github.com/neovim/neovim/issues/2048#issuecomment-78045837
 
+Set git commit editor
+```
+git config --global core.editor "nvim"
+```
+
 ## Uninstall
 
 ```
