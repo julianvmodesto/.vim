@@ -41,6 +41,7 @@ Plug 'mxw/vim-jsx'
 " Markdown
 Plug 'neovim/node-host', { 'do': 'npm install' }
 Plug 'vimlab/mdown.vim', { 'do': 'npm install' }
+Plug 'plasticboy/vim-markdown'
 
 " Add plugins to &runtimepath
 call plug#end()
