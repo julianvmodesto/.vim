@@ -115,6 +115,7 @@ set clipboard=unnamed " Yank to the system clipboard by default
 
 set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~,*.pyc,.svn
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*node_modules*,*.jpg,*.png,*.svg,*.ttf,*.woff,*.woff3,*.eot
+set wildignore+=*/.git/*
 
 if &history < 1000
   set history=50
@@ -168,4 +169,9 @@ if has("autocmd")
   augroup END
 
 endif " has("autocmd")
+
+" Use ripgrep
+if executable('rg')
+  set grepprg=rg\ --vimgrep
+endif
 
