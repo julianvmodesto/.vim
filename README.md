@@ -5,7 +5,6 @@ My vim dot files.
 ## Prerequisites
 - neovim
 - tmux
-- Python
 - Node
 
 ## Python
@@ -31,6 +30,13 @@ Find and check `g:python_host_prog` and `g:python3_host_prog` in vimrc/init.vim
 ```
 let g:python_host_prog = 'path/to/python'
 let g:python3_host_prog = 'path/to/python'
+```
+
+## Ruby
+Install RVM.
+
+```
+gem install neovim
 ```
 
 ## Install
