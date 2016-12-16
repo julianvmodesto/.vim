@@ -6,6 +6,7 @@ My vim dot files.
 - neovim
 - tmux
 - Python
+- Node
 
 ## Python
 https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
@@ -58,6 +59,15 @@ https://github.com/neovim/neovim/issues/2048#issuecomment-78045837
 Set git commit editor
 ```
 git config --global core.editor "nvim"
+```
+
+## Keys
+In iTerm, go to Preferences > Profiles > Keys and set the left-option key to +Esc
+
+```
+<C-key>      = Ctrl
+<leader-key> = \
+<M-key>      = left-option key is +Esc
 ```
 
 ## Uninstall
