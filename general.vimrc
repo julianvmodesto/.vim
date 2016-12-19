@@ -164,8 +164,14 @@ if has("autocmd")
   augroup END
 
   " use tabs
-  augroup golang
+   augroup Golang
     au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+  augroup END
+
+  augroup Markdown
+    autocmd!
+    autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+    autocmd BufRead,BufNewFile *.md setlocal textwidth=80 formatoptions+=t
   augroup END
 
 endif " has("autocmd")
