@@ -20,7 +20,11 @@ nmap ga <Plug>(EasyAlign)
 " let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 " Use ripgrep for ctrlp
 if executable('rg')
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  "  --files: List files that would be searched but do not search
+  "  --hidden: Search hidden files and folders
+  "  --follow: Follow symlinks
+  "  --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+  let g:ctrlp_user_command = 'rg %s --files --color=never --hidden --follow --glob "!.git/*"'
   let g:ctrlp_use_caching = 0
 endif
 
