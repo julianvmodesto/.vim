@@ -8,6 +8,7 @@ Plug 'neomake/neomake'
 
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'tomtom/tcomment_vim'
 Plug 'junegunn/vim-easy-align'
