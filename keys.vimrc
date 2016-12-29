@@ -20,6 +20,12 @@ map :Sp :sp
 map :Q :q
 map :Wq :wq
 
+" Use Ctrl-C instead of Esc
+nmap <c-c> <esc>
+imap <c-c> <esc>
+vmap <c-c> <esc>
+omap <c-c> <esc>
+
 " Quickly jump between errors in quickfix
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
