@@ -31,6 +31,9 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'christoomey/vim-tmux-navigator'
 
+" Rust
+Plug 'rust-lang/rust.vim'
+
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 

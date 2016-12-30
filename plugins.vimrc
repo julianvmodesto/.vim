@@ -65,3 +65,6 @@ let g:deoplete#enable_at_startup = 1
 " Don't auto-pair  " because it's a vim comment
 au Filetype vim let b:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'", '`':'`'}
 
+" :RustFmt
+let g:rustfmt_autosave = 1
+
