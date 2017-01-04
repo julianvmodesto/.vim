@@ -14,7 +14,10 @@ Plug 'tomtom/tcomment_vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+if has('python3')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+endif
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -43,8 +46,10 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
 " Markdown
-Plug 'neovim/node-host', { 'do': 'npm install' }
-Plug 'vimlab/mdown.vim', { 'do': 'npm install' }
+if has('nvim')
+  Plug 'neovim/node-host', { 'do': 'npm install' }
+  Plug 'vimlab/mdown.vim', { 'do': 'npm install' }
+endif
 
 " Add plugins to &runtimepath
 call plug#end()
