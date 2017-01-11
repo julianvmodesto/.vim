@@ -68,6 +68,8 @@ Set git commit editor
 git config --global core.editor "nvim"
 ```
 
+Install neomake makers e.g. eslint, golint, shellcheck.
+
 ## Keys
 In iTerm, go to Preferences > Profiles > Keys and set the left-option key to +Esc
 

@@ -1,6 +1,11 @@
 
 let g:neomake_go_enabled_makers = ['golint', 'govet']
 let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_sh_enabled_makers = ['shellcheck']
+
+" use bash maker options because shellcheck doesn't support zsh yet
+let g:neomake_zsh_enabled_makers = ['shellcheck']
+let g:neomake_zsh_shellcheck_maker = neomake#makers#ft#sh#shellcheck()
 
 " When switching/opening a JS buffer, set neomake's eslint path, and enable it as a maker
 autocmd BufEnter *.js let g:neomake_javascript_eslint_exe = nrun#Which('eslint')
