@@ -18,6 +18,7 @@ nnoremap Y y$
 map :Vs :vs
 map :Sp :sp
 map :Q :q
+map :W :w
 map :Wq :wq
 
 " Use Ctrl-C instead of Esc
