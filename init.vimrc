@@ -52,6 +52,8 @@ if has('nvim')
   Plug 'vimlab/mdown.vim', { 'do': 'npm install' }
 endif
 
+Plug 'wakatime/vim-wakatime'
+
 " Add plugins to &runtimepath
 call plug#end()
 
