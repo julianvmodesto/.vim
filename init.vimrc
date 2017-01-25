@@ -14,6 +14,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'editorconfig/editorconfig-vim'
 
 if has('python3') && has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
