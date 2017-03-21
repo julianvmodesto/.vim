@@ -35,6 +35,8 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'christoomey/vim-tmux-navigator'
 
+Plug 'wakatime/vim-wakatime'
+
 " Rust
 Plug 'rust-lang/rust.vim'
 
