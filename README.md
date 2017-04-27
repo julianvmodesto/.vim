@@ -45,9 +45,11 @@ gem install neovim
 cd ~
 git clone --recursive https://github.com/julianvmodesto/.vim
 ln -sf $HOME/.vim/vimrc $HOME/.vimrc
-mkdir -p ~/.config/nvim
-ln -sf ~/.vim ~/.config/nvim
-ln -sf ~/.vim/vimrc ~/.config/nvim/init.vim
+
+# alias vim dotfiles to neovim
+mkdir -p "${XDG_CONFIG_HOME:=$HOME/.config}"
+ln -snf "${HOME}/.vim" "${XDG_CONFIG_HOME}/nvim"
+ln -snf "${HOME}/.vimrc" "${XDG_CONFIG_HOME}/nvim/init.vim"
 ```
 
 ## Post-Install
