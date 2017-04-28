@@ -1,3 +1,12 @@
+silent function! OSX()
+  return has('macunix')
+endfunction
+silent function! LINUX()
+  return has('unix') && !has('macunix') && !has('win32unix')
+endfunction
+silent function! WINDOWS()
+  return  (has('win32') || has('win64'))
+endfunction
 
 if !has('nvim')
   " Syntax highlighting
@@ -34,7 +43,10 @@ if !has('nvim')
 
   " In many terminal emulators the mouse works just fine, thus enable it.
   if has('mouse')
+    " Automatically enable mouse
     set mouse=a
+    " Hide the mouse cursor while typing
+    set mousehide
   endif
 
   if &tabpagemax < 50
@@ -50,30 +62,36 @@ endif
 if has('nvim')
 endif
 
+" Assume a dark background
+set background=dark
+
 " No beeps
 set noerrorbells
 
-" Use two-character soft tabs for indentation
-set expandtab
-set shiftwidth=2
+set expandtab    " tabs are spaces, not tabs
+set shiftwidth=2 " use two-character soft tabs for indentation
 set smartindent
-set tabstop=4
+set tabstop=4    " indent every four columns
 
 " Hint - use EasyAlign command vipga"
 
-set number        " show line numbers
-set nowrap
+set number                                         " show line numbers
+set nowrap                                         " don't wrap long lines
 set scrolloff=2
-set ruler         " show the cursor position all the time
+set ruler                                          " show the cursor position all the time
+set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
 set cursorline
 set title
-set showmode      " show mode if we don't have airline
-set showcmd       " show me what i'm typing
-set showtabline=2 " always show tabline
+set showmode                                       " show mode if we don't have airline
+set showcmd                                        " show me what i'm typing
+set showtabline=2                                  " always show tabline
 
 set noswapfile    " don't use swapfile
 set nobackup      " don't create annoying backup files
 set nowritebackup
+
+" Turn on spellcheck
+set spell
 
 set hidden     " allow hidden buffers, don't limit to 1 file per window/split
 set confirm    " Ask to save buffer instead of failing when executing
@@ -111,7 +129,13 @@ execute "set colorcolumn=" . join(range(81,335), ',')
 highlight colorcolumn ctermbg=238
 highlight colorcolumn guibg=black
 
-set clipboard=unnamedplus " Yank to the system clipboard by default
+if has('clipboard')
+  if has('unnamedplus')  " When possible use + register for copy-paste
+    set clipboard=unnamed,unnamedplus
+  else         " On mac and Windows, use * register for copy-paste
+    set clipboard=unnamed
+  endif
+endif
 
 set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~,*.pyc,.svn
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*node_modules*,*.jpg,*.png,*.svg,*.ttf,*.woff,*.woff3,*.eot
@@ -144,6 +168,9 @@ if has("autocmd")
 
     " Add spellcheck to gitcommit
 	autocmd FileType gitcommit setlocal spell
+    " Instead of reverting the cursor to the last position in the buffer, we
+    " set it to the first line when editing a git commit message
+    autocmd FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 
     " When editing a file, always jump to the last known cursor position.
     " Don't do it when the position is invalid or when inside an event handler
