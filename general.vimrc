@@ -90,9 +90,6 @@ set noswapfile    " don't use swapfile
 set nobackup      " don't create annoying backup files
 set nowritebackup
 
-" Turn on spellcheck
-set spell
-
 set hidden     " allow hidden buffers, don't limit to 1 file per window/split
 set confirm    " Ask to save buffer instead of failing when executing
                " commands which close buffers
