@@ -86,26 +86,30 @@ set showmode                                       " show mode if we don't have 
 set showcmd                                        " show me what i'm typing
 set showtabline=2                                  " always show tabline
 
-set noswapfile    " don't use swapfile
-set nobackup      " don't create annoying backup files
+set noswapfile                                     " don't use swapfile
+set nobackup                                       " don't create annoying backup files
 set nowritebackup
 
-set hidden     " allow hidden buffers, don't limit to 1 file per window/split
-set confirm    " Ask to save buffer instead of failing when executing
-               " commands which close buffers
-set autowrite  " automatically save before :next, :make etc.
-set lazyredraw " wait to redraw
+set hidden                                         " allow hidden buffers, don't limit to 1 file per window/split
+set confirm                                        " Ask to save buffer instead of failing when executing
+                                                   " commands which close buffers
+set autowrite                                      " automatically save before :next, :make etc.
+set lazyredraw                                     " wait to redraw
 
 set showmatch
 set matchtime=2
-set noshowmatch   " do not show matching brackets by flickering
-set ignorecase    " search case insensitive...
-set smartcase     " ... but not when search pattern contains upper case characters
-set magic         " for regex
+set noshowmatch                                    " do not show matching brackets by flickering
+set ignorecase                                     " search case insensitive...
+set smartcase                                      " ... but not when search pattern contains upper case characters
+set magic                                          " for regex
 
 " speed up syntax highlighting
 set nocursorcolumn
 set nocursorline
+
+" more natural splits
+set splitbelow
+set splitright
 
 syntax sync minlines=256
 set synmaxcol=300
@@ -128,6 +132,8 @@ highlight colorcolumn guibg=black
 
 if has('clipboard')
   if has('unnamedplus')  " When possible use + register for copy-paste
+    set clipboard=unnamed,unnamedplus
+  elseif has('unix') && has('clipboard') " neovim has('unnamedplus') is always 0
     set clipboard=unnamed,unnamedplus
   else         " On mac and Windows, use * register for copy-paste
     set clipboard=unnamed
