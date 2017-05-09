@@ -32,7 +32,7 @@ Plug 'SirVer/ultisnips'                  " enable snippets engine
 Plug 'honza/vim-snippets'                " enable snippets
 
 Plug 'editorconfig/editorconfig-vim'     " adhere to .editorconfig
-Plug 'wakatime/vim-wakatime'
+Plug 'wakatime/vim-wakatime'             " Wakatime tracking
 
 " Rust
 Plug 'rust-lang/rust.vim'
@@ -51,7 +51,8 @@ if has('nvim') && executable('npm')
   Plug 'vimlab/mdown.vim', { 'do': 'npm install' }
 endif
 
-Plug 'wakatime/vim-wakatime'
+" Terraform
+Plug 'hashivim/vim-terraform'
 
 " Add plugins to &runtimepath
 call plug#end()
