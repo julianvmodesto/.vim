@@ -1,3 +1,5 @@
+" Avoid <Esc>
+inoremap jk <Esc>
 
 " set moving between windows to ctrl+arrows
 nnoremap <silent> <C-Right> <c-w>l
