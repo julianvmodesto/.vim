@@ -175,6 +175,8 @@ if has("autocmd")
     " set it to the first line when editing a git commit message
     autocmd FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 
+    autocmd BufNewFile,BufRead haproxy.cfg set filetype=haproxy
+
     " When editing a file, always jump to the last known cursor position.
     " Don't do it when the position is invalid or when inside an event handler
     " (happens when dropping a file on gvim).
