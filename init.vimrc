@@ -54,9 +54,6 @@ endif
 " Terraform
 Plug 'hashivim/vim-terraform'
 
-" HAProxy
-Plug 'haproxy'
-
 " Add plugins to &runtimepath
 call plug#end()
 
