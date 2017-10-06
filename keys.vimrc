@@ -23,6 +23,10 @@ map :Q :q
 map :W :w
 map :Wq :wq
 
+" Do not show stupid q: window
+" https://twitter.com/ingridmorstrad/status/904169399166296067
+map q: :q
+
 " Use Ctrl-C instead of Esc
 nmap <c-c> <esc>
 imap <c-c> <esc>
