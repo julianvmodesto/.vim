@@ -167,7 +167,8 @@ if has("autocmd")
     autocmd BufWritePre * %s/\s\+$//e
 
     " Set vim to save the file on focus out.
-	autocmd FocusLost * :wa
+    " Don't produce error for attempting to save a buffer w/out a file name.
+	autocmd FocusLost * :silent! wa
 
     " Add spellcheck to gitcommit
 	autocmd FileType gitcommit setlocal spell
