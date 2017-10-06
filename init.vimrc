@@ -40,19 +40,28 @@ Plug 'rust-lang/rust.vim'
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
+" Scala
+Plug 'derekwyatt/vim-scala'
+
 " JavaScript
 Plug 'jaawerth/nrun.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
 " Markdown
-if has('nvim') && executable('npm')
-  Plug 'neovim/node-host', { 'do': 'npm install' }
-  Plug 'vimlab/mdown.vim', { 'do': 'npm install' }
-endif
+" if has('nvim') && executable('npm')
+"   Plug 'neovim/node-host', { 'do': 'npm install' }
+"   Plug 'vimlab/mdown.vim', { 'do': 'npm install' }
+" endif
 
 " Terraform
 Plug 'hashivim/vim-terraform'
+
+" Jsonnet
+Plug 'google/vim-jsonnet'
+
+" HAProxy
+Plug 'vim-scripts/haproxy'
 
 " Add plugins to &runtimepath
 call plug#end()
