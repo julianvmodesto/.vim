@@ -38,6 +38,10 @@ map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 
+" Close tabs to the right
+map :qr ::.+1,$tabdo :q
+" NOTE: use :tabonly to close all other tabs
+
 " Go
 autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
