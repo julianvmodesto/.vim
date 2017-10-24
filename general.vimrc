@@ -41,14 +41,6 @@ if !has('nvim')
 
   set ttyfast
 
-  " In many terminal emulators the mouse works just fine, thus enable it.
-  if has('mouse')
-    " Automatically enable mouse
-    set mouse=a
-    " Hide the mouse cursor while typing
-    set mousehide
-  endif
-
   if &tabpagemax < 50
     set tabpagemax=50
   endif
@@ -57,6 +49,14 @@ if !has('nvim')
     set viminfo^=!
   endif
 
+endif
+
+" In many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+  " Automatically enable mouse
+  set mouse=a
+  " Hide the mouse cursor while typing
+  set mousehide
 endif
 
 if has('nvim')
