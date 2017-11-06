@@ -6,6 +6,10 @@ elseif isdirectory($HOME."/anaconda")
   let g:python3_host_prog=$HOME."/anaconda/envs/neovim3/bin/python"
 endif
 
+if isdirectory($HOME."/.rbenv/versions/2.4.2/")
+  let g:ruby_host_prog=$HOME.'/.rbenv/versions/2.4.2/bin/neovim-ruby-host'
+endif
+
 " Modularized vimrc
 " https://www.gregjs.com/vim/2016/do-yourself-a-favor-and-modularize-your-vimrc-init-vim/
 source $HOME/.vim/init.vimrc

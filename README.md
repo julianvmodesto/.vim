@@ -33,7 +33,7 @@ let g:python3_host_prog = 'path/to/python'
 ```
 
 ## Ruby
-Install RVM.
+Install rbenv.
 
 ```
 gem install neovim
