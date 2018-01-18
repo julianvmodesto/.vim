@@ -50,10 +50,10 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
 " Markdown
-" if has('nvim') && executable('npm')
-"   Plug 'neovim/node-host', { 'do': 'npm install' }
-"   Plug 'vimlab/mdown.vim', { 'do': 'npm install' }
-" endif
+if has('nvim') && executable('npm')
+" |npm install -g livedown| or |yarn global add livedown|
+  Plug 'shime/vim-livedown'
+endif
 
 " Terraform
 Plug 'hashivim/vim-terraform'
