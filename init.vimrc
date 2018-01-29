@@ -17,6 +17,7 @@ Plug 'wincent/terminus'
 
 Plug 'kien/ctrlp.vim'                    " fuzzy file finder
 Plug 'christoomey/vim-tmux-navigator'    " navigate between tmux + vim panes
+Plug 'tmux-plugins/vim-tmux'
 
 Plug 'vim-airline/vim-airline'           " fancy status line
 Plug 'vim-airline/vim-airline-themes'
