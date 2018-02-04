@@ -17,38 +17,38 @@ noremap <silent> <C-j> <c-w>j
 nnoremap Y y$
 
 " sometimes this happens and I hate it
-map :Vs :vs
-map :Sp :sp
-map :Q :q
-map :W :w
-map :Wq :wq
+noremap :Vs :vs
+noremap :Sp :sp
+noremap :Q :q
+noremap :W :w
+noremap :Wq :wq
 
 " Do not show stupid q: window
 " https://twitter.com/ingridmorstrad/status/904169399166296067
-map q: :q
+noremap q: :q
 
 " Use Ctrl-C instead of Esc
-nmap <c-c> <esc>
-imap <c-c> <esc>
-vmap <c-c> <esc>
-omap <c-c> <esc>
+noremap <c-c> <esc>
 
 " Quickly jump between errors in quickfix
-map <C-n> :cnext<CR>
-map <C-m> :cprevious<CR>
+noremap <C-n> :cnext<CR>
+noremap <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 
 " Close tabs to the right
-map :qr ::.+1,$tabdo :q
+noremap :qr ::.+1,$tabdo :q
 " NOTE: use :tabonly to close all other tabs
 
 " Go
-autocmd FileType go nmap <leader>r <Plug>(go-run)
-autocmd FileType go nmap <leader>t <Plug>(go-test)
-autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+augroup VimGo
+  autocmd FileType go noremap <leader>r <Plug>(go-run)
+  autocmd FileType go noremap <leader>t <Plug>(go-test)
+  autocmd FileType go noremap <Leader>c <Plug>(go-coverage-toggle)
+  autocmd FileType go noremap <leader>b :<C-u>call <SID>build_go_files()<CR>
+augroup END
 
 " run :GoBuild or :GoTestCompile based on the go file
-function! s:build_go_files()
+function! s:build_go_files() abort
   let l:file = expand('%')
   if l:file =~# '^\f\+_test\.go$'
     call go#cmd#Test(0, 1)
@@ -56,6 +56,4 @@ function! s:build_go_files()
     call go#cmd#Build(0)
   endif
 endfunction
-
-autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 

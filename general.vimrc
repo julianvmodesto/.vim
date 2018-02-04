@@ -14,31 +14,17 @@ if !has('nvim')
   syntax enable
 
   filetype off
-  filetype plugin indent on
-
-  set nocompatible
-
-  set autoindent
 
   set autoread                   " Automatically reread changed files without asking me anything
-
   set backspace=indent,eol,start " Allow backspacing over everything in insert mode
-
   set complete-=i
-
   set display+=lastline
-
   set encoding=utf-8             " Set default encoding to UTF-8
-
   set hlsearch                   " Highlight found searches
   set incsearch                  " Shows the match while typing
-
   set laststatus=2               " always show status line
-
   set nrformats-=octal
-
   set smarttab
-
   set ttyfast
 
   if &tabpagemax < 50
@@ -70,8 +56,11 @@ set noerrorbells
 
 set expandtab    " tabs are spaces, not tabs
 set shiftwidth=2 " use two-character soft tabs for indentation
-set smartindent
 set tabstop=4    " indent every four columns
+set softtabstop=2
+
+filetype plugin indent on
+set autoindent
 
 " Hint - use EasyAlign command vipga"
 
@@ -127,8 +116,11 @@ set completeopt=longest,menuone
 
 " show color column for 80-char limit
 execute "set colorcolumn=" . join(range(81,335), ',')
-highlight colorcolumn ctermbg=238
-highlight colorcolumn guibg=black
+augroup Highlights
+  autocmd!
+  highlight colorcolumn ctermbg=238
+  highlight colorcolumn guibg=black
+augroup END
 
 if has('clipboard')
   if has('unnamedplus')  " When possible use + register for copy-paste
@@ -158,7 +150,7 @@ endif
 
 if has("autocmd")
   augroup vimrcEx
-    au!
+    autocmd!
 
     " For all text files set 'textwidth' to 78 characters.
     autocmd FileType text setlocal textwidth=108
@@ -191,8 +183,9 @@ if has("autocmd")
   augroup END
 
   " use tabs
-   augroup Golang
-    au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+  augroup Golang
+    autocmd!
+    autocmd BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
   augroup END
 
   augroup Markdown
