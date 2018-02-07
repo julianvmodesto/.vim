@@ -2,6 +2,7 @@
 let g:neomake_go_enabled_makers = ['golint', 'govet']
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_sh_enabled_makers = ['shellcheck']
+let g:neomake_shellcheck_args = ['-fgcc']
 
 " When switching/opening a JS buffer, set neomake's eslint path, and enable it as a maker
 augroup NeomakeJS
