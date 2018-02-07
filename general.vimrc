@@ -5,7 +5,7 @@ silent function! LINUX()
   return has('unix') && !has('macunix') && !has('win32unix')
 endfunction
 silent function! WINDOWS()
-  return  (has('win32') || has('win64'))
+  return (has('win32') || has('win64'))
 endfunction
 
 if !has('nvim')
@@ -113,6 +113,9 @@ set ttimeoutlen=10
 " better completion
 set complete=.,w,b,u,t
 set completeopt=longest,menuone
+
+" Faster update time
+set updatetime=400
 
 " show color column for 80-char limit
 execute "set colorcolumn=" . join(range(81,335), ',')
