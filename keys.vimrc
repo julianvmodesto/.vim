@@ -41,9 +41,9 @@ noremap :qr ::.+1,$tabdo :q
 
 " Go
 augroup VimGo
-  autocmd FileType go noremap <leader>r <Plug>(go-run)
-  autocmd FileType go noremap <leader>t <Plug>(go-test)
-  autocmd FileType go noremap <Leader>c <Plug>(go-coverage-toggle)
+  autocmd FileType go nmap <leader>r <Plug>(go-run)
+  autocmd FileType go nmap <leader>t <Plug>(go-test)
+  autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
   autocmd FileType go noremap <leader>b :<C-u>call <SID>build_go_files()<CR>
 augroup END
 
@@ -51,7 +51,7 @@ augroup END
 function! s:build_go_files() abort
   let l:file = expand('%')
   if l:file =~# '^\f\+_test\.go$'
-    call go#cmd#Test(0, 1)
+    call go#test#Test(0, 1)
   elseif l:file =~# '^\f\+\.go$'
     call go#cmd#Build(0)
   endif
