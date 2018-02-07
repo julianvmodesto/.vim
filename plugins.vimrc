@@ -1,20 +1,19 @@
 
+let g:neomake_go_enabled_makers = ['golint', 'govet']
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_sh_enabled_makers = ['shellcheck']
 
-if exists(':neomake')
-  let g:neomake_go_enabled_makers = ['golint', 'govet']
-  let g:neomake_javascript_enabled_makers = ['eslint']
-  let g:neomake_sh_enabled_makers = ['shellcheck']
-
-  " use bash maker options because shellcheck doesn't support zsh yet
-  let g:neomake_zsh_enabled_makers = ['shellcheck']
-  let g:neomake_zsh_shellcheck_maker = neomake#makers#ft#sh#shellcheck()
-
-  " When switching/opening a JS buffer, set neomake's eslint path, and enable it as a maker
+" When switching/opening a JS buffer, set neomake's eslint path, and enable it as a maker
+augroup NeomakeJS
+  autocmd!
   autocmd BufEnter *.js let g:neomake_javascript_eslint_exe = nrun#Which('eslint')
+augroup END
 
+augroup Neomake
+  autocmd!
   " Run Neomake on current file on write
   autocmd! BufWritePost,BufEnter * Neomake
-endif
+augroup END
 
 let g:jsx_ext_required = 0
 
@@ -56,10 +55,12 @@ let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_autosave = 1
 
 " :GoAlternate
-autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
-autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
-autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
-autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+augroup GoAlternate
+  autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+  autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+  autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+  autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+augroup END
 
 " :GoInfo
 let g:go_auto_type_info = 1
@@ -70,7 +71,9 @@ let g:go_auto_sameids = 1
 let g:deoplete#enable_at_startup = 1
 
 " Don't auto-pair  " because it's a vim comment
-au Filetype vim let b:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'", '`':'`'}
+augroup NoAutoPairVimComments
+  autocmd Filetype vim let b:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'", '`':'`'}
+augroup END
 
 " :RustFmt
 let g:rustfmt_autosave = 1
