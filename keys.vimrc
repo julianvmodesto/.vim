@@ -1,5 +1,5 @@
-" Avoid <Esc>
-inoremap jk <Esc>
+nmap j gj
+nmap k gk
 
 " set moving between windows to ctrl+arrows
 nnoremap <silent> <C-Right> <c-w>l
@@ -29,6 +29,12 @@ noremap q: :q
 
 " Use Ctrl-C instead of Esc
 noremap <c-c> <esc>
+
+" Avoid <Esc>
+inoremap jk <Esc>
+
+" Quick change directory to current file
+nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 
 " Quickly jump between errors in quickfix
 noremap <C-n> :cnext<CR>
