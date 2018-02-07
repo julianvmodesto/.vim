@@ -7,7 +7,7 @@ call plug#begin()
 Plug 'neomake/neomake'
 
 Plug 'ervandew/supertab'                 " autocomplete with tabs
-Plug 'jeffkreeftmeijer/vim-numbertoggle' " toggle between relative + absolute line numbers
+Plug 'jeffkreeftmeijer/vim-numbertoggle' " toggle between relative + absolute line numbers with :set number (no)relativenumber
 Plug 'bronson/vim-trailing-whitespace'   " delete trailing whitespace
 Plug 'tomtom/tcomment_vim'               " toggle comments
 Plug 'junegunn/vim-easy-align'           " align text

@@ -9,9 +9,9 @@ augroup NeomakeJS
   autocmd BufEnter *.js let g:neomake_javascript_eslint_exe = nrun#Which('eslint')
 augroup END
 
+" Run Neomake on current file on write
 augroup Neomake
   autocmd!
-  " Run Neomake on current file on write
   autocmd! BufWritePost,BufEnter * Neomake
 augroup END
 
