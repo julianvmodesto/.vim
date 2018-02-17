@@ -2,38 +2,23 @@
 
 My vim dot files.
 
-## Prerequisites
-- neovim
-- tmux
-- Node
+## Neovim
 
-## Python
-https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
-
-Install Anaconda.
+### Python
 
 ```
-conda update conda
-conda update anaconda
-conda create -n neovim2 python=2.7
-conda install -n neovim2 flake8
-source activate neovim2
+pyenv install 2.7.14
+pyenv virtualenv 2.7 neovim2
+pyenv activate neovim2
 pip install neovim
-conda create -n neovim3 python=3.4
-conda install -n neovim3 flake8
-source activate neovim3
+
+pyenv install 3.6.4
+pyenv virtualenv 3.6.4 neovim3
+pyenv activate neovim3
 pip install neovim
 ```
 
-Find and check `g:python_host_prog` and `g:python3_host_prog` in vimrc/init.vim
-
-```
-let g:python_host_prog = 'path/to/python'
-let g:python3_host_prog = 'path/to/python'
-```
-
-## Ruby
-Install rbenv.
+### Ruby
 
 ```
 gem install neovim
@@ -42,9 +27,9 @@ gem install neovim
 ## Install
 
 ```
-cd ~
-git clone --recursive https://github.com/julianvmodesto/.vim
-ln -sf $HOME/.vim/vimrc $HOME/.vimrc
+cd "$HOME"
+git clone --recursive https://github.com/julianvmodesto/.vim.git "${HOME}/.vim"
+ln -snf "${HOME}/.vim/vimrc" "${HOME}/.vimrc"
 
 # alias vim dotfiles to neovim
 mkdir -p "${XDG_CONFIG_HOME:=$HOME/.config}"
@@ -57,33 +42,5 @@ ln -snf "${HOME}/.vimrc" "${XDG_CONFIG_HOME}/nvim/init.vim"
 ```
 vim -c "CheckHealth"
 vim -c "PlugInstall" -c "qa" # Install plugins with vim-plug
-```
-
-Configure tmux.
-https://github.com/christoomey/vim-tmux-navigator#tmux
-
-Fix neovim + <C-h>
-https://github.com/neovim/neovim/issues/2048#issuecomment-78045837
-
-Set git commit editor
-```
-git config --global core.editor "nvim"
-```
-
-Install neomake makers e.g. eslint, golint, shellcheck.
-
-## Keys
-In iTerm, go to Preferences > Profiles > Keys and set the left-option key to +Esc
-
-```
-<C-key>      = Ctrl
-<leader-key> = \
-<M-key>      = left-option key is +Esc
-```
-
-## Uninstall
-
-```
-rm -rf ~/.config/nvim ~/.vim ~/.vimrc
 ```
 

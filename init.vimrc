@@ -28,6 +28,10 @@ Plug 'tpope/vim-fugitive'                " Git workflow funcs
 
 if has('python3') && has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
 Plug 'SirVer/ultisnips'                  " enable snippets engine
