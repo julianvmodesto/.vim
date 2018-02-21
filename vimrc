@@ -448,6 +448,7 @@ noremap :qr ::.+1,$tabdo :q
 
 " Go
 augroup VimGo
+  autocmd!
   autocmd FileType go nmap <leader>r <Plug>(go-run)
   autocmd FileType go nmap <leader>t <Plug>(go-test)
   autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
