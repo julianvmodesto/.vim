@@ -13,6 +13,7 @@ Plug 'tomtom/tcomment_vim'               " toggle comments
 Plug 'junegunn/vim-easy-align'           " align text
 Plug 'AndrewRadev/splitjoin.vim'         " toggle blocks between multiple line blocks + one-liners
 Plug 'jiangmiao/auto-pairs'              " insert + delete pairs of brackets, quotes, parens, etc.
+Plug 'tpope/vim-surround'
 Plug 'wincent/terminus'
 
 Plug 'kien/ctrlp.vim'                    " fuzzy file finder
@@ -68,6 +69,9 @@ Plug 'google/vim-jsonnet'
 
 " HAProxy
 Plug 'vim-scripts/haproxy'
+
+" Caddy
+Plug 'isobit/vim-caddyfile'
 
 " Add plugins to &runtimepath
 call plug#end()
