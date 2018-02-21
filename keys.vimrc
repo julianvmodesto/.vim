@@ -1,5 +1,5 @@
-nmap j gj
-nmap k gk
+noremap j gj
+noremap k gk
 
 " set moving between windows to ctrl+arrows
 nnoremap <silent> <C-Right> <c-w>l
@@ -63,4 +63,11 @@ function! s:build_go_files() abort
     call go#cmd#Build(0)
   endif
 endfunction
+
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xnoremap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nnoremap ga <Plug>(EasyAlign)
 
