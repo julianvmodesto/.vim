@@ -327,10 +327,13 @@ augroup NeomakeJS
 augroup END
 
 " Run Neomake on current file on write
-augroup Neomake
-  autocmd!
-  autocmd! BufWritePost,BufEnter * Neomake
-augroup END
+"
+if exists(':Neomake')
+  augroup Neomake
+    autocmd!
+    autocmd! BufWritePost,BufEnter * Neomake
+  augroup END
+endif
 
 let g:jsx_ext_required = 0
 
