@@ -8,7 +8,7 @@ My vim dot files.
 
 ```
 pyenv install 2.7.14
-pyenv virtualenv 2.7 neovim2
+pyenv virtualenv 2.7.14 neovim2
 pyenv activate neovim2
 pip install neovim
 
