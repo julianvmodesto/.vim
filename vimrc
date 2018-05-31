@@ -40,6 +40,7 @@ Plug 'AndrewRadev/splitjoin.vim'         " toggle blocks between multiple line b
 Plug 'jiangmiao/auto-pairs'              " insert + delete pairs of brackets, quotes, parens, etc.
 Plug 'tpope/vim-surround'
 Plug 'wincent/terminus'
+Plug 'tpope/vim-abolish'                 " case-sensitive text substitution
 
 Plug 'kien/ctrlp.vim'                    " fuzzy file finder
 Plug 'christoomey/vim-tmux-navigator'    " navigate between tmux + vim panes
