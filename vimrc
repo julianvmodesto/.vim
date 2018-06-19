@@ -149,6 +149,9 @@ if !has('nvim')
 
 endif
 
+" Incremental preview of search & replace
+set inccommand=nosplit
+
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
   " Automatically enable mouse
