@@ -338,6 +338,8 @@ if exists(':Neomake')
   augroup END
 endif
 
+let g:terraform_fmt_on_save = 1
+
 let g:jsx_ext_required = 0
 
 " Make CtrlP faster by ignoring files in .gitignore
