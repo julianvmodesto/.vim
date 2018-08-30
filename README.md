@@ -16,6 +16,8 @@ pyenv install 3.6.4
 pyenv virtualenv 3.6.4 neovim3
 pyenv activate neovim3
 pip install neovim
+
+pyenv global 3.6.4 2.7.14 system neovim3 neovim2
 ```
 
 ### Ruby
