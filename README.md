@@ -12,7 +12,7 @@ pyenv virtualenv 2.7.14 neovim2
 pyenv activate neovim2
 pip install neovim
 
-pyenv install 3.6.4
+pyenv install 3.6.6
 pyenv virtualenv 3.6.4 neovim3
 pyenv activate neovim3
 pip install neovim

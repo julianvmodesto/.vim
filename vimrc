@@ -1,26 +1,3 @@
-if isdirectory($HOME."/.pyenv/versions/neovim2/")
-" pyenv install 2.7.14
-" pyenv virtualenv 2.7 neovim2
-" pyenv activate neovim2
-" pip install neovim
-"
-  let g:python_host_prog=$HOME."/.pyenv/versions/neovim2/bin/python"
-endif
-if isdirectory($HOME."/.pyenv/versions/neovim3/")
-" pyenv install 3.6.4
-" pyenv virtualenv 3.6.4 neovim3
-" pyenv activate neovim3
-" pip install neovim
-  let g:python3_host_prog=$HOME."/.pyenv/versions/neovim3/bin/python"
-endif
-
-if isdirectory($HOME."/.rbenv/versions/2.4.2/")
-" rbenv install 2.4.2
-" rbenv global 2.4.2
-" gem install neovim
-  let g:ruby_host_prog=$HOME.'/.rbenv/versions/2.4.2/bin/neovim-ruby-host'
-endif
-
 """ Install Plugins
 
 " plugins expect bash -, not fish, nor zsh, etc.
