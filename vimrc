@@ -375,6 +375,11 @@ augroup END
 " :RustFmt
 let g:rustfmt_autosave = 1
 
+" mzlogin/vim-markdown-toc
+let g:vmt_fence_text = 'TOC'
+let g:vmt_fence_closing_text = '/TOC'
+let g:vmt_fence_hidden_markdown_style = 'GFM'
+
 """ Line
 set noshowmode " We show the mode with airline or lightline
 
