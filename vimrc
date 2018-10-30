@@ -78,8 +78,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
 " Markdown
-if has('nvim') && executable('npm')
+Plug 'mzlogin/vim-markdown-toc'
 " |npm install -g livedown| or |yarn global add livedown|
+if executable('livedown')
   Plug 'shime/vim-livedown'
 endif
 
