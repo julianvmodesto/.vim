@@ -7,17 +7,19 @@ My vim dot files.
 ### Python
 
 ```
-pyenv install 2.7.14
-pyenv virtualenv 2.7.14 neovim2
+pyenv install 2.7.15
+pyenv virtualenv 2.7.15 neovim2
 pyenv activate neovim2
 pip install neovim
+pip2 install pynvim
 
-pyenv install 3.6.6
+pyenv install 3.6.4
 pyenv virtualenv 3.6.4 neovim3
 pyenv activate neovim3
 pip install neovim
+pip3 install pynvim
 
-pyenv global 3.6.4 2.7.14 system neovim3 neovim2
+pyenv global 3.6.4 2.7.15 system neovim3 neovim2
 ```
 
 ### Ruby
