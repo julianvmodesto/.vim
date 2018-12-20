@@ -464,8 +464,13 @@ function! s:build_go_files() abort
 endfunction
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
-xnoremap ga <Plug>(EasyAlign)
+xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nnoremap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
+augroup MarkdownTableFormat
+  autocmd!
+  au FileType markdown vmap <tab> :EasyAlign*<Bar><Enter>
+augroup END
 
