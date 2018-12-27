@@ -11,15 +11,20 @@ pyenv virtualenv-delete -f neovim2
 pyenv install 2.7.15 --skip-existing
 pyenv virtualenv 2.7.15 neovim2
 pyenv activate neovim2
-pip install neovim
-pip2 install pynvim
+pip2 install \
+  msgpack-python==0.5.1 \
+  neovim \
+  pynvim
 
 pyenv virtualenv-delete -f neovim3
 pyenv install 3.6.4 --skip-existing
 pyenv virtualenv 3.6.4 neovim3
 pyenv activate neovim3
-pip install neovim
-pip3 install pynvim
+pip3 uninstall msgpack-python
+pip3 install \
+  msgpack-python==0.5.1 \
+  neovim \
+  pynvim
 
 pyenv global 3.6.4 2.7.15 system neovim3 neovim2
 ```
