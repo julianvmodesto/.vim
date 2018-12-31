@@ -31,6 +31,8 @@ install_providers:
 	  msgpack-python==0.5.1 \
 	  neovim \
 	  pynvim
+	rbenv install 2.5.3 --skip-existing
+	rbenv global 2.5.3 system
 	gem install neovim
 
 .PHONY: update
