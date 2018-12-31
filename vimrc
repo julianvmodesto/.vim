@@ -109,6 +109,7 @@ if !has('nvim')
   syntax on
   syntax enable
 
+  set nocompatible
   filetype off
 
   set autoread                   " Automatically reread changed files without asking me anything
@@ -165,6 +166,7 @@ set autoindent
 set number                                         " show line numbers
 set nowrap                                         " don't wrap long lines
 set scrolloff=2
+set fileformats=unix,dos,mac                       " Prefer Unix over Windows over OS 9 formats
 set ruler                                          " show the cursor position all the time
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
 set cursorline
@@ -202,6 +204,9 @@ syntax sync minlines=256
 set synmaxcol=300
 set re=1
 
+" do not hide markdown
+set conceallevel=0
+
 " time out on key codes but not mappings.
 " basically this makes terminal vim work sanely.
 set notimeout
@@ -233,8 +238,28 @@ if has('clipboard')
   endif
 endif
 
-set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~,*.pyc,.svn
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*node_modules*,*.jpg,*.png,*.svg,*.ttf,*.woff,*.woff3,*.eot
+" Wildmenu completion {{{
+set wildmenu
+" set wildmode=list:longest
+set wildmode=list:full
+
+set wildignore+=.hg,.git,.svn                        " Version control
+set wildignore+=*.aux,*.out,*.toc                    " LaTeX intermediate files
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.svg " binary images
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest     " compiled object files
+set wildignore+=*.spl                                " compiled spelling word lists
+set wildignore+=*.sw?                                " Vim swap files
+set wildignore+=*.DS_Store                           " OSX bullshit
+set wildignore+=*.luac                               " Lua byte code
+set wildignore+=migrations                           " Django migrations
+set wildignore+=go/pkg                               " Go static files
+set wildignore+=go/bin                               " Go bin files
+set wildignore+=go/bin-vagrant                       " Go bin-vagrant files
+set wildignore+=*.py[co]                             " Python byte code
+set wildignore+=*.orig                               " Merge resolution files
+set wildignore+=*.bak,*~,*.swp
+set wildignore+=*/tmp/*,*.so,*.zip,*.gzip
+set wildignore+=*node_modules*,*.ttf,*.woff,*.woff3,*.eot
 set wildignore+=*/.git/*
 
 if &history < 1000
@@ -397,6 +422,12 @@ let g:airline_solarized_bg='dark'
 
 """ Keys
 
+" This comes first, because we have mappings that depend on leader
+" With a map leader it's possible to do extra key combinations
+" i.e: <leader>w saves the current file
+let mapleader = ","
+let g:mapleader = ","
+
 noremap j gj
 noremap k gk
 
@@ -430,7 +461,12 @@ noremap q: :q
 noremap <c-c> <esc>
 
 " Avoid <Esc>
-inoremap jk <Esc>
+inoremap jk <Esc>l
+
+" Search mappings: These will make it so that going to the next one in a
+" search will center on the line it's found in.
+nnoremap n nzzzv
+nnoremap N Nzzzv
 
 " Quick change directory to current file
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
@@ -439,6 +475,23 @@ nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 noremap <C-n> :cnext<CR>
 noremap <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
+
+" Remove search highlight
+nnoremap <leader><space> :nohlsearch<CR>
+
+" Buffer prev/next
+nnoremap <C-x> :bnext<CR>
+nnoremap <C-z> :bprev<CR>
+
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" Center the screen
+nnoremap <space> zz
+
+" Move up and down on splitted lines (on small width screens)
+map <Up> gk
+map <Down> gj
 
 " Close tabs to the right
 noremap :qr ::.+1,$tabdo :q
