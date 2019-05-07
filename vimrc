@@ -327,6 +327,13 @@ if executable('rg')
   set grepprg=rg\ --vimgrep
 endif
 
+" https://kartowicz.com/dryobates/2014-05/sorting_paragraphs_in_vim/
+function! SortParagraphs() range
+  execute a:firstline . "," . a:lastline . 'd'
+  let @@=join(sort(split(substitute(@@, "\n*$", "", ""), "\n\n")), "\n\n")
+  put!
+endfunction
+
 """ Plugin Config
 
 let g:neomake_go_enabled_makers = ['golint', 'govet']
