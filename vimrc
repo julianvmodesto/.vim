@@ -375,6 +375,9 @@ endif
 " use goimports for formatting
 let g:go_fmt_command = "goimports"
 
+let g:go_info_mode = 'gopls'
+let g:go_def_mode = 'gopls'
+
 " turn highlighting on
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
