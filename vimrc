@@ -50,7 +50,7 @@ Plug 'wakatime/vim-wakatime'             " Wakatime tracking
 Plug 'rust-lang/rust.vim'
 
 " Go
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Scala
 Plug 'derekwyatt/vim-scala'
