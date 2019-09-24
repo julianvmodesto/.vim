@@ -1,6 +1,6 @@
 """ Install Plugins
-let g:python_host_prog = '~/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = '~/.pyenv/versions/neovim3/bin/python'
+let g:python_host_prog = $HOME.'~/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
 
 if ! has('python') && ! has('python3')
   echo 'Expected to find python + python3, but either or both were not found'
