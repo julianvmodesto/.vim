@@ -201,7 +201,7 @@ set splitbelow
 set splitright
 
 syntax sync minlines=256
-set synmaxcol=300
+set synmaxcol=150
 set re=1
 
 " do not hide markdown
