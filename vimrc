@@ -372,11 +372,7 @@ if executable('rg')
   let g:ctrlp_use_caching = 0
 endif
 
-" use goimports for formatting
-let g:go_fmt_command = "goimports"
-
-let g:go_info_mode = 'gopls'
-let g:go_def_mode = 'gopls'
+let g:go_rename_command = 'gopls'
 
 " turn highlighting on
 let g:go_highlight_types = 1
@@ -388,8 +384,6 @@ let g:go_highlight_operators = 1
 
 let g:go_list_type = "quickfix"
 let g:go_fmt_fail_silently = 1
-
-let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 
 " :GoAlternate
 augroup GoAlternate
