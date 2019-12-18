@@ -372,6 +372,7 @@ if executable('rg')
   let g:ctrlp_use_caching = 0
 endif
 
+let g:go_fmt_command = 'goimports'
 let g:go_rename_command = 'gopls'
 
 " turn highlighting on
