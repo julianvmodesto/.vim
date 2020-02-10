@@ -402,6 +402,7 @@ let g:go_auto_sameids = 1
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
 " Don't auto-pair  " because it's a vim comment
 augroup NoAutoPairVimComments
